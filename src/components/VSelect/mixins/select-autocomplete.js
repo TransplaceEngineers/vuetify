@@ -118,7 +118,10 @@ export default {
       ) this.$refs.menu.changeListIndex(e)
 
       // Up or down
-      if ([38, 40].includes(e.keyCode)) this.selectedIndex = -1
+      if ([38, 40].includes(e.keyCode)) {
+        this.selectedIndex = -1
+        if (this.getMenuIndex() === -1) this.setMenuIndex(0)
+      }
 
       if (this.isAutocomplete &&
         !this.hideSelections &&
