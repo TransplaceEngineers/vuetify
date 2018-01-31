@@ -101,7 +101,6 @@ export default {
       this.menuIsActive = false
     },
     onKeyDown (e) {
-      console.log('onKeyDown called', e.keyCode, this.menuIsActive)
       // If enter, space, up, or down is pressed, open menu
       if (!this.menuIsActive && [13, 32, 38, 40].includes(e.keyCode)) {
         e.preventDefault()
@@ -121,7 +120,7 @@ export default {
       // Up or down
       if ([38, 40].includes(e.keyCode)) {
         this.selectedIndex = -1
-        // if (this.getMenuIndex() === -1) this.setMenuIndex(0)
+        if (this.getMenuIndex() === -1) this.setMenuIndex(0)
       }
 
       if (this.isAutocomplete &&
